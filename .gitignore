@@ -1,0 +1,13 @@
+# Build output
+build/
+vm_simulator
+test_allocator
+test_memory
+test_multi_level
+test_single_level
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
