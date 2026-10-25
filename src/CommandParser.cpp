@@ -1,4 +1,5 @@
 
+
 #include "CommandParser.h"
 
 #include <iomanip>
@@ -19,6 +20,11 @@ void CommandParser::run(std::istream& input) {
         }
 
         executeLine(line);
+    }
+
+    // Release all remaining frames after processing every command.
+    if (configured && allocator) {
+        allocator->releaseAll();
     }
 }
 

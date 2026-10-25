@@ -1,4 +1,5 @@
 
+
 #ifndef FRAME_ALLOCATOR_H
 #define FRAME_ALLOCATOR_H
 
@@ -34,6 +35,9 @@ public:
     uint64_t freeFrames() const;
     uint64_t dataFrames() const;
     uint64_t pageTableFrames() const;
+
+    // Release all remaining frames when simulation ends.
+    void releaseAll();
 };
 
 #endif

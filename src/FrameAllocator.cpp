@@ -1,4 +1,5 @@
 
+
 #include "FrameAllocator.h"
 
 FrameAllocator::FrameAllocator(uint64_t totalFrames)
@@ -89,4 +90,11 @@ uint64_t FrameAllocator::pageTableFrames() const {
     }
 
     return count;
+}
+
+// Release every remaining allocated frame.
+void FrameAllocator::releaseAll() {
+    for (FrameType& type : frames) {
+        type = FrameType::Free;
+    }
 }
